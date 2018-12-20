@@ -131,12 +131,14 @@ public class ProzorController {
     }
 
     private boolean oboji(TextField ime) {
-        if (ime.getText().length() < 1 || ime.getText().length() > 20) greskaO = true;
-        int n = ime.getText().length();
+
+                       int n = ime.getText().length();
         for (int i = 0; i < n; i++) {
             if (!(Character.isLetter(ime.getText().charAt(i)) || Character.isWhitespace(ime.getText().charAt(i))))
                 greskaO = true;
+            else greskaO=false;
         }
+        if (ime.getText().length() < 1 || ime.getText().length() > 20) greskaO = true;
         if (greskaO) ime.setStyle("-fx-background-color: rgba(255,45,86,0.74)");
 
         else {
